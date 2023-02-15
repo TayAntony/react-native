@@ -3,17 +3,21 @@ import { View, TextInput, Text, Button, TouchableOpacity, StyleSheet, Image} fro
 import React, { useState } from "react" 
 
 import styles from './styles'
+import Login from "../login"
 
-export default function Calcular(){
+export default function Body(){
   const [operacao, setOperacao] = useState('')
   const [resultado, setResultado] = useState('')
   const operar = () =>{
     setResultado(eval(operacao))
+    setOperacao('')
+
   }
   return(
     <View style={styles.container}>
-        <TextInput placeholder="Digite" style={styles.input} onChangeText={(x) => {setOperacao(x)}} keyboardType='numeric' value={String(operacao)}>
+        <TextInput placeholder="Digite" style={styles.input} onChangeText={(x) => {setOperacao(x)}} keyboardType='numeric' onKeyPress={(event) => {if (event.nativeEvent.key == 'Enter'){operar()}}} value={String(operacao)}>
         </TextInput>
+        
         <button onClick={operar} style={styles.botao}>Calcule</button>
 
         <Text style={styles.texto}>{resultado}</Text>
@@ -22,6 +26,7 @@ export default function Calcular(){
           <Image source={require('../../assets/operacoes.jpg')} style={styles.imagem}>
           </Image>
         </View>
+
     </View>
   )
 }
