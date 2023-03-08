@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "components",
+			"path": "../../../aula01-03/components"
+		},
+		{
+			"name": "aula04",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
