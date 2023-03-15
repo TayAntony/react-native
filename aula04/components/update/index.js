@@ -7,10 +7,8 @@ export default function Update(){
         <View style={styles.container}>
             <LinearGradient 
                 style={{
-                width: 400, 
-                marginTop: 15, 
-                borderRadius: 5, 
-                flex: 1, 
+                    width: 400,  
+                    flex: 1,
                 
             }}
                 colors={['#53FACF','#4FB5FF']}>

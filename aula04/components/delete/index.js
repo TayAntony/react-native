@@ -7,10 +7,8 @@ export default function Delete({navigation}){
         <View style={styles.container}>
             <LinearGradient 
                 style={{
-                width: 400, 
-                marginTop: 15, 
-                borderRadius: 5, 
-                flex: 1, 
+                    width: 400,  
+                    flex: 1,
                 
             }}
                 colors={['#F74336','#D4536A']}>

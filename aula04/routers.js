@@ -22,57 +22,62 @@ export default function Routers() {
             <Nav.Navigator
             screenOptions={{
                 tabBarStyle:{
+                    backgroundColor: 'black',
                     backfaceVisibility: 'black',
-                    borderTopColor: 'transparent',
-                    paddingBottom: 2,
-                    paddingTop: 2
+                    borderTopColor: 'grey',
+                    paddingBottom: 3,
+                    paddingTop: 3
                 },
-                tabBarActiveTintColor: 'black',
+                tabBarActiveTintColor: 'white',
                 tabBarInactiveTintColor: 'grey'
             }}
             >
+
 
                 <Nav.Screen
                     name="Login"
                     component={Login} 
     
-                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <AntDesign name="login" size={24} color="black" />}
+                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <AntDesign name="login" size={24} color="white" />},
+                    tabBarStyle: {display: 'none'}
                 }}
                 />
 
                 <Nav.Screen
                     name="Home"
                     component={Home}
-                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <FontAwesome name="home" size={24} color="black" />}
+                    
+                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <FontAwesome name="home" size={24} color="white" />},
+                        
                 }}
-                />
+                />      
 
 
                 <Nav.Screen
                     name="Read"
                     component={Read}
-                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <Ionicons name="md-reader" size={24} color="black" />}
+                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <Ionicons name="md-reader" size={24} color="white" />}
                 }}
                 />
                 
                 <Nav.Screen
                     name="Update"
                     component={Update}
-                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <MaterialIcons name="update" size={24} color="black" />}
+                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <MaterialIcons name="update" size={24} color="white" />}
                 }}
                 />
                 
                 <Nav.Screen
                     name="Create"
                     component={Create}
-                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <Ionicons name="create" size={24} color="black" />}
+                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <Ionicons name="create" size={24} color="white" />}
                 }}
                 />
 
                 <Nav.Screen
                     name="Delete"
                     component={Delete}
-                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <MaterialIcons name="delete" size={24} color="black" />}
+                    options={{ headerShown: false, tabBarIcon: ({size, color}) => {return  <MaterialIcons name="delete" size={24} color="white" />}
                 }}
                 />
 
