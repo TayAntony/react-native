@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
     input:{
         height: 40,
-        width: 200,
+        width: 220,
         borderColor: 'transparent',
         borderBottomColor: 'white',
         borderStyle: "solid", 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     },
     botao:{
         height: 40,
-        width: 200,
+        width: 240,
         marginTop: 20,
         borderStyle: 'solid',
         borderColor: 'white',
@@ -101,6 +101,17 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'col',
         alignItems: 'flex-end',
+    },
+    error:{
+        fontSize: 10,
+        color:'red',
+    },
+
+    alinharError:{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems:'flex-end',
+        justifyContent:'flex-start'
     }
 
 })

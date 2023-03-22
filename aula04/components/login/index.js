@@ -9,25 +9,23 @@ import React, { useState } from 'react';
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('teste');
+    const [senha, setSenha] = useState('');
+    const [errou, setErrou] = useState(false)
     const auth = getAuth();
 
     const btnLogin = () => {
-        console.log(senha);
-        console.log(email);
         signInWithEmailAndPassword(auth, email, senha) 
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user)
+                navigation.navigate('Home')
+                
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage)
+                setErrou(true)
             });
-    }
-    function teste(valor) {
-        console.log("Chamando funcao");
     }
     return (
         <View style={styles.container}>
@@ -57,14 +55,22 @@ export default function Login({ navigation }) {
                         <View style={styles.iconeInput}>
                             <TextInput secureTextEntry={true}
                                 style={styles.input} placeholder="Digite sua senha"
-                                onChange={(e) => { setSenha(e.target.value) }}
+                                onChange ={(e) => { setSenha(e.target.value) }}
                             // value={senha}
                             />
                             <Ionicons name={'eye'} size={15} color={'#fff'} style={styles.icone} />
                         </View>
-                        <Text style={styles.esqueceuSenha}>
-                            Esqueceu sua senha?
-                        </Text>
+                    </View>
+                    <Text style={styles.esqueceuSenha}>
+                                Esqueceu sua senha?
+                            </Text>
+
+                    <View style={styles.alinharError}>
+                            {errou &&
+                        <Text style={styles.error}>
+                            Senha ou e-mail incorretos
+                        </Text>}
+                           
                     </View>
 
                     <TouchableOpacity style={styles.botao} onPress={() => btnLogin(email, senha)} >
