@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
         
     },
     txt1:{
-        fontSize: 18,
+        fontSize: 14,
         color: 'white',
         margin: 20,
-        width: 250,
+        width: 200,
         
     },
     logo:{
@@ -46,18 +46,15 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     card:{
-        minWidth: 340,
-        minHeight: 390,
-        marginTop: 48,
-        margin: 24,
+        minWidth: 300,
+        maxWidth: 300,
+        margin: 40,
         flex: 1,
         borderColor: 'white',
         borderStyle: "solid", 
         borderWidth: 1,
         borderRadius: 20,
         backgroundColor: 'black',
-        opacity: 0.8,
-        position: 'absolute',
     },
     link:{
         fontSize: 12,

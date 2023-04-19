@@ -1,17 +1,18 @@
-
+import { View, Text, Button, Image, ImageBackground, TouchableOpacity, TextInput } from "react-native";
 import { StyleSheet } from 'react-native';
 
-export default function BotaoGoogle({ navigation }) {
+export default function BotaoGoogle({ props }) {
+return(
     <TouchableOpacity style={styles.botao}>
 
         <View style={styles.botaoGoogle}>
-            <Text style={{ color: 'white', fontSize: 14, }}>
-                Cadastrar com Google
+            <Text style={{ color: 'white', fontSize: 16, }}>
+                {props}
             </Text>
             <Image source={require('../assets/google.png')} style={styles.google} />
         </View>
-
     </TouchableOpacity>
+)
 }
 
 export const styles = StyleSheet.create({
@@ -25,6 +26,7 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems:'center',
         justifyContent: 'center',
+        padding: 24
     },
     google:{
         width: 20,

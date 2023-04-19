@@ -1,20 +1,23 @@
 import { View, Text, Button, Image, ImageBackground, TouchableOpacity, TextInput } from "react-native";
 import styles from './styles'
-import BotaoLogin from "../../components/botaoLogin";
-
-
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import firebaseConfig from 'expo/AppEntry'
 import React, { useState } from 'react';
+import BotaoLogin from "../../components/botaoLogin";
+import Seta from "../../components/seta";
 
 
-export default function Inicio({ navigation }) {
+export default function Inicio({ navigation, props }) {
+    function login() {
+        navigation.navigate('Login')
+    }
+    function cadastro() {
+        navigation.navigate('Cadastro')
+        console.log("Passou");
+    }
     return (
         <View style={styles.container}>
-
             <ImageBackground
                 source={require('../../assets/fundo.png')}
-                style={{ width: 500, height: 800, position: 'absolute' }}
+                style={{ width: 500, height: 850, position: 'absolute' }}
             />
             <View>
                 <Image source={require('../../assets/logo.png')} style={styles.logo}></Image>
@@ -22,16 +25,40 @@ export default function Inicio({ navigation }) {
                     Onde você faz acontecer!
                 </Text>
             </View>
-            
-            <View style={styles.card}>
-                <View style={{ flex: 1, alignItems: 'center' }}>
-                    <Text style={styles.txt1}>Olá, seja bem vindo(a) ao ToDo, minha plataforma de Digital Bank! </Text>
+
+            <View>
+                <View style={styles.card}>
+                    <View style={{ flex: 1, alignItems: 'center' }}>
+                        <Text style={styles.txt1}>Olá, seja bem vindo(a) ao ToDo, minha plataforma de Digital Bank! </Text>
+                    </View>
+
+                    <TouchableOpacity
+                        style={{height: 40,
+                            width: 240,
+                            marginTop: 20,
+                            borderStyle: 'solid',
+                            borderColor: 'white',
+                            borderRadius: 12,
+                            borderWidth: 1,
+                            alignItems:'center',
+                            justifyContent: 'center',
+                            backgroundColor: 'black',
+                            padding: 24,}}
+                        onPress={() => navigation.navigate('Cadastro')}
+                    >
+                        <Text style={{ color: 'white', fontSize: 18, }}>
+                            Sou Novo
+                        </Text>
+                    </TouchableOpacity>
+
+
+                    <Text onPress={login} style={styles.link}>
+                        Já possui uma conta?
+                    </Text>
                 </View>
-                <BotaoLogin props='Sou novo!'/>
-                <Text style={styles.link}>
-                    Já possui uma conta? 
-                </Text>
+
             </View>
+
         </View>
     )
 }

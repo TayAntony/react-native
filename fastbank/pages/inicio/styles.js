@@ -5,9 +5,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     card:{
-        minWidth: 350,
-        maxWidth: 300,
-        margin: 40,
+        minWidth: 340,
+        minHeight: 390,
+        marginTop: 48,
+        margin: 24,
         flex: 1,
         borderColor: 'white',
         borderStyle: "solid", 
@@ -15,17 +16,20 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         backgroundColor: 'black',
         opacity: 0.8,
-        position: 'absolute'
+        position: 'absolute',
+        alignItems: 'center'
     },
     txt1:{
         fontSize: 20,
         color: 'white',
+        fontWeight: 600,
+        marginTop: 50,
         margin: 20,
         width: 250,
     },
     logo:{
-        width: 150,
-        height:110,
+        width: 180,
+        height:130,
         alignItems: "center",
         justifyContent: 'center',
         marginTop: 30,
@@ -33,16 +37,19 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     link:{
-        fontSize: 14,
+        fontSize: 16,
         marginTop: 20,
         color: 'grey',
+        margin: 50,
+        fontWeight: 600,
     },
     slogan:{
-        fontSize: 20,
+        fontSize: 16,
         color: 'white',
+        marginTop: 20,
         marginLeft: 30,
         fontFamily: 'Michroma'
-    }
+    },
 
 })
 

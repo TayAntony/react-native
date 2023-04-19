@@ -2,6 +2,9 @@ import { View, Text, Button, Image, ImageBackground, TouchableOpacity, TextInput
 import styles from './styles'
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
+import BotaoGoogle from "../../components/botaoGoogle";
+import BotaoLogin from "../../components/botaoLogin";
+import Seta from "../../components/seta";
 
 
 export default function Login({ navigation }) {
@@ -11,6 +14,7 @@ export default function Login({ navigation }) {
     // const auth = getAuth();
 
     const btnLogin = () => {
+        console.log('tentou logar')
         // signInWithEmailAndPassword(auth, email, senha) 
         //     .then((userCredential) => {
         //         const user = userCredential.user;
@@ -24,20 +28,25 @@ export default function Login({ navigation }) {
         //         setErrou(true)
         //     });
     }
+    const btnGoogle = () => {
+        console.log('tentou cadastrar com google')
+        
+    }
     return (
         <View style={styles.container}>
+
             
             <ImageBackground
                 source={require('../../assets/fundo.png')}
-                style={{ width: 800, height: 800, position: 'absolute' }}
+                style={{ width: 800, height: 840, position: 'absolute' }}
             />
-            <Image source={require('../../assets/logo.png')} style={styles.logo}></Image>
+            <View>
+                <Seta/>
 
+                <Text style={styles.txt1}>Insira suas informações para realizar o login </Text>
+            </View>
             <View style={styles.card}>
                 <View style={{ flex: 1, alignItems: 'center' }}>
-                    
-                    <Text style={styles.txt1}>Olá, seja bem vindo(a) ao ToDo, minha plataforma de Digital Bank! </Text>
-
                     <View style={styles.iconeInput}>
                         <TextInput
                             style={styles.input}
@@ -71,31 +80,9 @@ export default function Login({ navigation }) {
                            
                     </View>
 
-                    <TouchableOpacity style={styles.botao} onPress={() => btnLogin(email, senha)} >
-                        <View>
-                            <Text style={{ color: 'white', fontSize: 14, }}>
-                                Logar
-                            </Text>
-                        </View>
+                    <BotaoLogin props='Logar' onPress={() => btnLogin(email, senha)}/>
 
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.botao}>
-
-                        <View style={styles.botaoGoogle}>
-                            <Text style={{ color: 'white', fontSize: 14, }}>
-                                Cadastrar com Google
-                            </Text>
-                            <Image source={require('../../assets/google.png')} style={styles.google} />
-                        </View>
-
-                    </TouchableOpacity>
-
-
-
-                    <Text style={styles.link}>
-                        Não possui uma conta? <strong>Cadastre-se</strong>
-                    </Text>
+                    <BotaoGoogle props='Logar com Google' onPress={() => btnGoogle()}/>
 
                 </View>
             </View>
