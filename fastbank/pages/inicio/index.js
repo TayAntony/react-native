@@ -32,7 +32,7 @@ export default function Inicio({ navigation, props }) {
                         <Text style={styles.txt1}>Olá, seja bem vindo(a) ao ToDo, minha plataforma de Digital Bank! </Text>
                     </View>
 
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={{height: 40,
                             width: 240,
                             marginTop: 20,
@@ -49,7 +49,9 @@ export default function Inicio({ navigation, props }) {
                         <Text style={{ color: 'white', fontSize: 18, }}>
                             Sou Novo
                         </Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
+
+                    <BotaoLogin props={{texto: "Sou novo", funcao:() => {navigation.navigate("Cadastro")}}}/>
 
 
                     <Text onPress={login} style={styles.link}>

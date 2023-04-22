@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: 0.8,
         position: 'absolute',
-        alignItems: 'center'
+        alignItems: 'center',
+        blurRadius: 0.1,
     },
     txt1:{
         fontSize: 20,

@@ -1,22 +1,23 @@
 import { StyleSheet } from 'react-native';
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import {Text, View, TouchableOpacity } from "react-native";
 
-export default function BotaoLogin({navigation, props}) {
+export default function BotaoLogin({props}) {
 
     return(
-    <TouchableOpacity 
-        style={styles.botao}
-        onPress={()=>navigation.navigate('Cadastro')}
-    >
-            <Text style={{ color: 'white', fontSize: 18, }}>
-                {props}
-            </Text>
-    </TouchableOpacity>
+    <View style={styles.botao}>
+        <TouchableOpacity
+             onPress={() => {props.funcao}}>
+                <Text style={{ color: 'white', fontSize: 18, }}>
+                    {props.texto}
+                </Text>
+        </TouchableOpacity>
+    </View>
     )
 }
 
 const styles = StyleSheet.create({
     botao:{
+        opacity: 1,
         height: 40,
         width: 240,
         marginTop: 20,
